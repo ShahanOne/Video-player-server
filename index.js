@@ -65,26 +65,31 @@ const video1 = new Video({
   comments: ['lol', 'jhhol'],
   videoUrl: 'https://www.youtube.com/watch?v=G3oB4owTOGY',
 });
+const video2 = new Video({
+  //new document in the collection
+  title: 'Table2',
+  comments: ['loll', 'jhholl'],
+  videoUrl: 'https://www.youtube.com/watch?v=G3oB4owTOGY',
+});
+// video2.save();
 
-// video1.save();
-
-// console.log(item2);
+// console.log(video1);
 
 // app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 app.get('/api', (req, res) => {
-  Video.find({}, function (err, foundItems) {
-    if (foundItems) {
-      res.send(foundItems);
-      //   console.log(foundItems);
+  Video.find({}, function (err, foundVideos) {
+    if (foundVideos) {
+      res.send(foundVideos);
+      //   console.log(foundVideos);
     } else console.log(err);
   });
 });
 
 app.post('/new-video', (req, res) => {
   const data = req.body[0];
-  const videoTitle = data.itemName;
-  const videoUrl = data.itemPrice;
+  const videoTitle = data.videoTitle;
+  const videoUrl = data.videoUrl;
   const userId = data.userId;
   // console.log(userName);
 
