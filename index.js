@@ -166,7 +166,7 @@ app.post('/comment', (req, res) => {
   // console.log(data);
 
   Video.findOne({ _id: videoId }, (err, foundVideo) => {
-    User.findOneAndUpdate(
+    Video.findOneAndUpdate(
       { _id: foundVideo._id },
       { comments: [...foundVideo.comments, newComment] },
       { returnOriginal: false },
