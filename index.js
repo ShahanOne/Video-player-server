@@ -23,8 +23,8 @@ app.use(cors(corsOptions));
 
 //Connection
 mongoose.connect(
-  'mongodb://localhost:27017/videosDB'
-  //   `mongodb+srv://Shahan786:${process.env.MONGO_PASSWORD}@cluster0.ma0c6.mongodb.net/videosDB`
+  // 'mongodb://localhost:27017/videosDB'
+  `mongodb+srv://Shahan786:${process.env.MONGO_PASSWORD}@cluster0.ma0c6.mongodb.net/videosDB`
 );
 
 //Schema  i.e the structure we want for data
